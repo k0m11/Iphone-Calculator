@@ -49,14 +49,14 @@ button:hover {
         margin-top: 50%;
     }
     h1 {
-        font-size: 80px;
+        font-size: 70px;
         width: 350px;
     }
 
     button {
-        width: 80px;
-        height: 80px;
-        font-size: 36px;
+        width: 70px;
+        height: 70px;
+        font-size: 34px;
     }
 
     .buttons-container {
