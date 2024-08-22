@@ -7,6 +7,7 @@ let result = document.querySelector(".result")
 let a = ""
 let b = ""
 let sign = ""
+let count = 90
 
 const digits = ["0","1","2","3","4","5","6","7","8","9","."]
 const signs = ["+","-","/","X","+/-","AC"]
@@ -41,13 +42,17 @@ plusMinus.addEventListener("click", ()=> {
 })
 
 buttons.addEventListener("click", (event)=> {
+    if(result.innerHTML.length >= 7 && result.innerHTML.length < 10) {
+        result.style.fontSize = `${count -= 5}px`
+    }
     if(!event.target.classList.contains("button")) return;
     if(event.target.classList.contains("AC")) return;
     if(event.target.classList.contains("PM")) return;
-
     let key = event.target.innerHTML
     // for numbers
     if(digits.includes(key)) {
+        if(result.innerHTML.length == 10) return;
+        // for Dots
         if(result.innerHTML.includes(".")) {
             if(event.target.classList.contains("Dot")) return;
         }
