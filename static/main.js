@@ -51,7 +51,7 @@ buttons.addEventListener("click", (event)=> {
     let key = event.target.innerHTML
     // for numbers
     if(digits.includes(key)) {
-        if(result.innerHTML.length == 10) return;
+        if(result.innerHTML.length == 10) alert("This is limit in length for normal showing, be carefull");;
         // for Dots
         if(result.innerHTML.includes(".")) {
             if(event.target.classList.contains("Dot")) return;
