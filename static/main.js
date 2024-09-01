@@ -51,9 +51,11 @@ plusMinus.addEventListener("click", ()=> {
 })
 
 buttons.addEventListener("click", (event)=> {
+    // To make numbers smaller
     if(result.innerHTML.length >= 7 && result.innerHTML.length < 10) {
         result.style.fontSize = `${count -= 5}px`
     }
+    // return nothing 
     if(!event.target.classList.contains("button")) return;
     if(event.target.classList.contains("AC")) return;
     if(event.target.classList.contains("PM")) return;
@@ -65,10 +67,12 @@ buttons.addEventListener("click", (event)=> {
         if(result.innerHTML.includes(".")) {
             if(event.target.classList.contains("Dot")) return;
         }
+        
         if(b == "" && sign == "") {
             a += key
             result.innerHTML = a
         }
+        
         if(!sign == "") {
             b += key
             result.innerHTML = b
@@ -96,7 +100,7 @@ buttons.addEventListener("click", (event)=> {
             result.innerHTML = sign
         }
     }
-
+    // for equals
     if(key == "=") {
         switch(sign) {
             case "+":
@@ -125,5 +129,4 @@ buttons.addEventListener("click", (event)=> {
         b = ""
         sign = ""
     }
-    console.log(a,sign,b)
 })
