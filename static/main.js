@@ -1,24 +1,32 @@
+// Choose DOM elements
 const buttons = document.querySelector(".buttons")
 const ClearAll = document.querySelector(".AC")
 const plusMinus = document.querySelector(".PM")
 const Delete = document.querySelector(".Delete")
 const Dot = document.querySelector(".Dot")
 let result = document.querySelector(".result")
+
+// Choose variables
 let a = ""
 let b = ""
 let sign = ""
 let count = 90
 
+// Numbers Array
 const digits = ["0","1","2","3","4","5","6","7","8","9","."]
+// Functions Array
 const signs = ["+","-","/","X","+/-","AC"]
 
+// ClearAll function
 ClearAll.addEventListener("click", ()=> {
+    // Set all variables to default
     a = ""
     b = ""
     sign = ""
     result.innerHTML = 0
 })
 
+// Delete function, divide number by 10
 Delete.addEventListener("click", ()=> {
     if (sign == "") {
         a = Math.floor(a/10)
@@ -30,6 +38,7 @@ Delete.addEventListener("click", ()=> {
     }
 })
 
+// PlusMinus function, returns negative number
 plusMinus.addEventListener("click", ()=> {
     if (sign == "") {
         a = -a
